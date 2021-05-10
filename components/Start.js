@@ -3,7 +3,8 @@ import { ImageBackground, StyleSheet, View, Text, TextInput, Image, TouchableOpa
 
 const Start = props => {
     const [name, setName] = useState('');
-    const [colour, setColour] = useState('');
+    const [backgroundColour, setBackgroundColour] = useState('#fff');
+    const colours = ['#090c08', '#474056', '#8a95a5', '#b9c6ae'];
 
     return (
         <ImageBackground source={require('../assets/background-image.png')} style={styles.background}>
@@ -22,16 +23,20 @@ const Start = props => {
                         />
                     </View>
                     <Text style={styles.chooseColourText}>Choose Background Colour</Text>
-                    <View style={styles.colourOptionsContainer}>
-                        <View style={styles.colourOne} onPress={() => setColour('#090c08')} />
-                        <View style={styles.colourTwo} onPress={() => setColour('#474056')} />
-                        <View style={styles.colourThree} onPress={() => setColour('#8a95a5')} />
-                        <View style={styles.colourFour} onPress={() => setColour('#b9c6ae')} />
+                    <View style={styles.colourButtonsContainer}>
+                        {colours.map(colour => (
+                            <View style={[styles.colourBorder, backgroundColour === colour
+                                ? { borderColor: colour }
+                                : null]}
+                                key={colour}>
+                                <TouchableOpacity onPress={() => setBackgroundColour(colour)} style={[styles.colourBtn, { backgroundColor: colour }]} />
+                            </View>
+                        ))}
                     </View>
                     <TouchableOpacity style={styles.btnContainer}>
                         <Text
                             style={styles.btnText}
-                            onPress={() => props.navigation.navigate('Chat', { name, colour })}
+                            onPress={() => props.navigation.navigate('Chat', { name, backgroundColour })}
                         >Start Chatting</Text>
                     </TouchableOpacity>
                 </View>
@@ -39,6 +44,8 @@ const Start = props => {
         </ImageBackground>
     );
 };
+
+export default Start;
 
 const styles = StyleSheet.create({
     container: {
@@ -92,44 +99,26 @@ const styles = StyleSheet.create({
         marginTop: 50,
         marginBottom: 20
     },
-    colourOptionsContainer: {
+    colourButtonsContainer: {
         flex: 1,
-        flexDirection: 'row'
+        flexDirection: 'row',
+        justifyContent: 'space-between'
     },
-    colourOne: {
+    colourBtn: {
         height: 50,
         width: 50,
         borderRadius: 25,
-        backgroundColor: '#090c08',
-        marginRight: 25
-    },
-    colourTwo: {
-        height: 50,
-        width: 50,
-        borderRadius: 25,
-        backgroundColor: '#474056',
-        marginRight: 25
-    },
-    colourThree: {
-        height: 50,
-        width: 50,
-        borderRadius: 25,
-        backgroundColor: '#8a95a5',
-        marginRight: 25
-    },
-    colourFour: {
-        height: 50,
-        width: 50,
-        borderRadius: 25,
-        backgroundColor: '#b9c6ae',
-        marginRight: 25
+        margin: 25
     },
     colourBorder: {
-        height: 55,
-        width: 55,
-        borderRadius: 55 / 2,
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: 60,
+        width: 60,
+        borderRadius: 30,
         borderWidth: 3,
-        borderColor: '#090c08'
+        borderStyle: 'solid',
+        borderColor: '#fff'
     },
     btnContainer: {
         justifyContent: 'center',
@@ -147,5 +136,3 @@ const styles = StyleSheet.create({
         margin: 'auto'
     }
 });
-
-export default Start;

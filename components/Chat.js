@@ -1,13 +1,13 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 
 const Chat = props => {
-    let { name, colour } = props.route.params;
+    const { name, backgroundColour } = props.route.params;
     props.navigation.setOptions({ title: name });
 
     return (
-        <View style={{ flex: 1, backgroundColor: colour }}>
-            <Text>
+        <View style={[styles.container, { backgroundColor: backgroundColour }]}>
+            <Text style={styles.text}>
                 What's on your mind?
             </Text>
         </View>
@@ -15,3 +15,15 @@ const Chat = props => {
 };
 
 export default Chat;
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: 'center'
+    },
+    text: {
+        fontSize: 16,
+        fontWeight: '600',
+        marginTop: 30
+    }
+})
