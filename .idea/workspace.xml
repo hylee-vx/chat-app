@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a47bcf2a-e1a4-4f2b-94fb-66c3e9e7e24d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/components/Chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Chat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1sLbVQVJ6CTUkScULebyLr7ez3q" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a47bcf2a-e1a4-4f2b-94fb-66c3e9e7e24d" name="Default Changelist" comment="" />
+      <created>1620654840640</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620654840640</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="360" y="231" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1620654895637">
+      <screen x="0" y="25" width="1792" height="1095" />
+    </state>
+    <state x="360" y="231" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1792.1095@0.25.1792.1095" timestamp="1620654895637" />
+    <state x="500" y="141" width="1200" height="800" key="AVDManager" timestamp="1620815625833">
+      <screen x="0" y="25" width="1792" height="1095" />
+    </state>
+    <state x="500" y="141" width="1200" height="800" key="AVDManager/0.25.1792.1095@0.25.1792.1095" timestamp="1620815625833" />
+    <state x="763" y="118" key="SettingsEditor" timestamp="1620655720678">
+      <screen x="0" y="25" width="1792" height="1095" />
+    </state>
+    <state x="763" y="118" key="SettingsEditor/0.25.1792.1095@0.25.1792.1095" timestamp="1620655720678" />
+    <state x="727" y="241" key="run.anything.popup" timestamp="1620655044395">
+      <screen x="0" y="25" width="1792" height="1095" />
+    </state>
+    <state x="727" y="241" key="run.anything.popup/0.25.1792.1095@0.25.1792.1095" timestamp="1620655044395" />
+  </component>
+</project>
