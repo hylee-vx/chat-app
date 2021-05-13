@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ImageBackground, StyleSheet, View, Text, TextInput, Image, TouchableOpacity } from 'react-native';
+import { ImageBackground, StyleSheet, View, Platform, KeyboardAvoidingView, Text, TextInput, Image, TouchableOpacity } from 'react-native';
 
 const Start = props => {
     const [name, setName] = useState('');
@@ -8,7 +8,10 @@ const Start = props => {
 
     return (
         <ImageBackground source={require('../assets/background-image.png')} style={styles.background}>
-            <View style={styles.container}>
+            <KeyboardAvoidingView
+                behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+                keyboardVerticalOffset={Platform.OS === 'ios' ? 50 : 0}
+                style={styles.container}>
                 <View style={styles.titleContainer}>
                     <Text style={styles.title}>Chat App</Text>
                 </View>
@@ -40,7 +43,7 @@ const Start = props => {
                         >Start Chatting</Text>
                     </TouchableOpacity>
                 </View>
-            </View>
+            </KeyboardAvoidingView>
         </ImageBackground>
     );
 };
@@ -68,7 +71,6 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     startContainer: {
-        flex: 44,
         margin: '6%',
         padding: '6%',
         backgroundColor: '#fff'
@@ -96,13 +98,14 @@ const styles = StyleSheet.create({
         fontWeight: '300',
         color: '#757083',
         opacity: 1,
-        marginTop: 50,
+        marginTop: 40,
         marginBottom: 20
     },
     colourButtonsContainer: {
-        flex: 1,
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        height: 70,
+        marginBottom: 30
     },
     colourBtn: {
         height: 50,
