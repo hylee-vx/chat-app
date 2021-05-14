@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a47bcf2a-e1a4-4f2b-94fb-66c3e9e7e24d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/components/Chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Chat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Start.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Start.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,10 +42,10 @@
       <screen x="0" y="25" width="1792" height="1095" />
     </state>
     <state x="360" y="231" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1792.1095@0.25.1792.1095" timestamp="1620654895637" />
-    <state x="500" y="141" width="1200" height="800" key="AVDManager" timestamp="1620815625833">
+    <state x="487" y="110" width="1200" height="800" key="AVDManager" timestamp="1620941189157">
       <screen x="0" y="25" width="1792" height="1095" />
     </state>
-    <state x="500" y="141" width="1200" height="800" key="AVDManager/0.25.1792.1095@0.25.1792.1095" timestamp="1620815625833" />
+    <state x="487" y="110" width="1200" height="800" key="AVDManager/0.25.1792.1095@0.25.1792.1095" timestamp="1620941189157" />
     <state x="763" y="118" key="SettingsEditor" timestamp="1620655720678">
       <screen x="0" y="25" width="1792" height="1095" />
     </state>
