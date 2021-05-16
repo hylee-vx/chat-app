@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import { StyleSheet, View, Platform, KeyboardAvoidingView } from 'react-native';
 import { Bubble, GiftedChat, InputToolbar } from 'react-native-gifted-chat';
 import firebase from 'firebase';
-import firestore from 'firebase';
+import 'firebase/firestore';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import NetInfo from '@react-native-community/netinfo';
+import MapView from 'react-native-maps';
+
+import CustomActions from './CustomActions';
 
 const firebaseConfig = {
     apiKey: "AIzaSyAlXPIwPwUOmUrOqN8bk2ZN_juX8Hs_IBU",
@@ -27,6 +30,7 @@ class Chat extends Component {
                 avatar: '',
             },
             isConnected: false,
+            image: null,
         };
         // initialises connection to Firebase DB
         if (!firebase.apps.length) {
@@ -39,7 +43,7 @@ class Chat extends Component {
     componentDidMount() {
         // adds user name to header
         const { name } = this.props.route.params;
-        this.props.navigation.setOptions({ title: name });
+        this.props.navigation.setOptions({ title: `${name}'s Chatroom` });
 
         // checks user connect
         NetInfo.fetch().then(connection => {
@@ -90,13 +94,15 @@ class Chat extends Component {
             let data = doc.data();
             messages.push({
                 _id: data._id,
-                text: data.text,
+                text: data.text || null,
                 createdAt: data.createdAt.toDate(),
                 user: {
                     _id: data.user._id,
                     name: data.user.name,
                     avatar: data.user.avatar,
                 },
+                image: data.image || null,
+                location: data.location || null,
             });
         });
         this.setState({
@@ -113,6 +119,8 @@ class Chat extends Component {
             createdAt: message.createdAt,
             text: message.text || null,
             user: message.user,
+            image: message.image || null,
+            location: message.location || null,
         });
     }
 
@@ -170,6 +178,33 @@ class Chat extends Component {
         }
     }
 
+    // displays additional communication features (photos, camera, map)
+    renderCustomActions = props => <CustomActions {...props} />
+
+    // returns custom map view
+    renderCustomView(props) {
+        const { currentMessage } = props;
+        if (currentMessage.location) {
+            return (
+                <MapView
+                    style={{
+                        width: 150,
+                        height: 100,
+                        borderRadius: 13,
+                        margin: 3
+                    }}
+                    region={{
+                        latitude: Number(currentMessage.location.latitude),
+                        longitude: Number(currentMessage.location.longitude),
+                        latitudeDelta: 0.0922,
+                        longitudeDelta: 0.0421
+                    }}
+                />
+            );
+        }
+        return null;
+    }
+
     // custom styling for active user's message bubble
     renderBubble(props) {
         return (
@@ -193,6 +228,8 @@ class Chat extends Component {
                     renderBubble={this.renderBubble.bind(this)}
                     renderInputToolbar={this.renderInputToolbar.bind(this)}
                     renderUsernameOnMessage={true}
+                    renderActions={this.renderCustomActions}
+                    renderCustomView={this.renderCustomView}
                     messages={this.state.messages}
                     onSend={messages => this.onSend(messages)}
                     user={this.state.user}
