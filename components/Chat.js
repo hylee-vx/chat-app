@@ -94,7 +94,7 @@ class Chat extends Component {
                 createdAt: data.createdAt.toDate(),
                 user: {
                     _id: data.user._id,
-                    name: data.user.nme,
+                    name: data.user.name,
                     avatar: data.user.avatar,
                 },
             });
