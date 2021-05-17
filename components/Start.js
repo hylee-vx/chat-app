@@ -37,7 +37,8 @@ const Start = props => {
                                     style={[styles.colourBtn, { backgroundColor: colour }]}
                                     accessible={true}
                                     accessibilityLabel='Background colour options'
-                                    accessibilityRole='Choose a background colour for your chat screen'
+                                    accessibilityHint='Choose a background colour for your chat screen'
+                                    accessibilityRole='Button'
                                 />
                             </View>
                         ))}

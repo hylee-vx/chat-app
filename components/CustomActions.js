@@ -143,7 +143,7 @@ class CustomActions extends Component {
                 accessible={true}
                 accessibilityLabel='More options'
                 accessibilityHint='Choose to send an image from your media library, a photo taken with your camera or your geolocation'
-                accessibilityRole='button'
+                accessibilityRole='Button'
             >
                 <View style={[styles.wrapper, this.props.wrapperStyle]}>
                     <Text style={[styles.iconText, this.props.iconTextStyle]}>+</Text>
