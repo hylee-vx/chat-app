@@ -34,10 +34,10 @@ npm install
 expo start
 ```
 
-# Running on Mobile Device
+### Running on Mobile Device
 After starting the app, use your mobile to scan the QR code with the Expo app (Android) or the device's camera (iOS). Alternatively, click on 'Send link with email' in the Expo Developer Tools that opens automatically in the browser.
 
-# Running on Simulator/Emulator
+### Running on Simulator/Emulator
 After starting the app, type 'a' in your CLI to run the app on an Android emulator, and 'i' to run it on an iOS simulator. Alternatively, click the appropriate option in the Expo Developer Tools in the browser.
 
 
