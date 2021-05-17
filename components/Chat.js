@@ -171,7 +171,7 @@ class Chat extends Component {
     }
 
     // disables message input bar if offline
-    renderInputToolbar(props) {
+    renderInputToolbar = props => {
         if (this.state.isConnected === false) {
         } else {
             return <InputToolbar {...props} />;
@@ -182,7 +182,7 @@ class Chat extends Component {
     renderCustomActions = props => <CustomActions {...props} />
 
     // returns custom map view
-    renderCustomView(props) {
+    renderCustomView = props => {
         const { currentMessage } = props;
         if (currentMessage.location) {
             return (
@@ -206,7 +206,7 @@ class Chat extends Component {
     }
 
     // custom styling for active user's message bubble
-    renderBubble(props) {
+    renderBubble = props => {
         return (
             <Bubble
                 {...props}
@@ -225,8 +225,8 @@ class Chat extends Component {
         return (
             <View style={[styles.container, { backgroundColor: backgroundColour }]}>
                 <GiftedChat
-                    renderBubble={this.renderBubble.bind(this)}
-                    renderInputToolbar={this.renderInputToolbar.bind(this)}
+                    renderBubble={this.renderBubble}
+                    renderInputToolbar={this.renderInputToolbar}
                     renderUsernameOnMessage={true}
                     renderActions={this.renderCustomActions}
                     renderCustomView={this.renderCustomView}

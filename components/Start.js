@@ -32,11 +32,22 @@ const Start = props => {
                                 ? { borderColor: colour }
                                 : null]}
                                 key={colour}>
-                                <TouchableOpacity onPress={() => setBackgroundColour(colour)} style={[styles.colourBtn, { backgroundColor: colour }]} />
+                                <TouchableOpacity
+                                    onPress={() => setBackgroundColour(colour)}
+                                    style={[styles.colourBtn, { backgroundColor: colour }]}
+                                    accessible={true}
+                                    accessibilityLabel='Background colour options'
+                                    accessibilityRole='Choose a background colour for your chat screen'
+                                />
                             </View>
                         ))}
                     </View>
-                    <TouchableOpacity style={styles.btnContainer}>
+                    <TouchableOpacity
+                        style={styles.btnContainer}
+                        accessible={true}
+                        accessibilityLabel='Start chatting'
+                        accessibilityRole='Button'
+                    >
                         <Text
                             style={styles.btnText}
                             onPress={() => props.navigation.navigate('Chat', { name, backgroundColour })}
